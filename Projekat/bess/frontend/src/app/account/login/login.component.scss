@@ -1,0 +1,66 @@
+.form-group{
+    width: 20%;
+    top: 16%;
+    margin: 1em auto;
+    position: relative;
+    display: block;
+}
+
+.containerstyle {
+    position: absolute;
+    top: 38%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 1em;
+    background-color: rgba(53, 38, 38, 0.35) !important;
+}
+
+:host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url('http://www.sightunseen.com/content/uploads/2016/09/BFerry-Sonos-Calico-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  input{
+    font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	border-radius: 0px;
+    padding: 3% 7%;
+  }
+
+  .btn {
+    background-color:#c68325;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	border-radius: 0px;
+	padding: 3% 7%;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.btn:hover, .btn:focus {
+    background-color: rgb(204, 163, 51);
+    color: #fff;
+    width: 100%;
+
+}
+
+p{
+    color: white;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -1,0 +1,46 @@
+<app-nav-menu></app-nav-menu>
+<div class="container">
+    <div class="row">
+            <div class="col-md-12">
+      
+                    <h2>My Profile</h2>
+                
+                        <p>Lorem ipsum dolor sit amet, patrioque interesset cu duo, no vim expetenda intellegebat. 
+                          Mutat iisque an sit. Errem omnium omittam mea ne. Dicam fabulas percipit in eam, aperiri 
+                          discere mandamus ut qui. Maiestatis vituperata ne sea, ne vero malorum aliquam mei.         
+                         </p>
+                
+                         <br>
+                         <hr>
+                         <br>
+                
+                         </div>
+                        </div>
+
+<div class="row">
+
+    <div class="col-lg-6 portfolio-item" *ngFor="let article of articles">
+
+        <div class="card h-100">
+          <a href="#">
+            <img class="card-img-top" [src]="article.pictureUrl" alt="">
+          </a>
+
+        <div class="card-body">
+            <h3>{{article.title}}</h3>
+            <p>{{article.description}}</p>
+            <a [routerLink] = "['/showArticle', article.articleId]">Read more
+            </a>
+            <br>
+            <a>Posted by {{article.user.username}}</a>
+        </div>
+
+      </div>
+
+      <!-- /.row -->
+      </div>
+
+      </div>
+     
+    </div>
+  <app-footer></app-footer>

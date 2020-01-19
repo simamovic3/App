@@ -1,0 +1,4 @@
+FROM mysql:5.6
+COPY ./mysql/bess_account_db.sql /docker-entrypoint-initdb.d/
+COPY ./mysql/bess_forum_db.sql /docker-entrypoint-initdb.d/
+COPY ./mysql/bess_article_db.sql /docker-entrypoint-initdb.d/

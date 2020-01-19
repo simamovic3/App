@@ -1,0 +1,49 @@
+<div *ngFor="let question of questions">
+
+    <div class="card">
+        <h6 class="card-header">Asked question</h6>
+        <div class="card-body">
+          <h6 class="card-text">{{question.text}}</h6>
+          <div *ngIf="question.answers.length">
+          <p class="card-text">Answers:</p>
+          <div *ngFor="let answer of question.answers">
+              <div class="card">
+              <div class="card-body">
+              <p class="card-text">{{answer.text}}</p>
+            </div>
+            
+            
+          </div>
+          </div>
+        </div>
+          <div *ngIf="temp">
+              <div *ngIf="question.questionid==questionId">
+              <form [formGroup]="answerCreateForm">
+                  <div class="form-group">
+                      <label>Write an answer:</label>
+                      <input type="text" formControlName="text" class="form-control" name="text" />
+                      
+                  </div>
+              
+                  <div class="form-group">
+                          <button class="btn btn-primary" type="submit" (click)="createAnswer(answerCreateForm.value, question.questionid)"> Save </button>
+              
+                  </div>
+                  <div class="form-group">
+                      <button class="btn btn-primary" type="submit" (click)="dontAnswer()"> Don't answer </button>
+          
+              </div>
+              </form>
+          </div>
+        </div>
+          <div *ngIf="!temp" class="form-group">
+              <button class="btn btn-primary" type="submit" (click)="loadForm(question.questionid)"> Add new answer </button>
+  
+          </div>
+        </div>
+      </div>
+      
+
+</div>
+
+

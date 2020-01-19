@@ -1,0 +1,48 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="container">
+	<div class="row">
+		
+        
+        <div class="col-md-12">
+        <h4>Users table</h4>
+
+        <br>
+        <div class="table-responsive">
+
+                
+              <table id="mytable" class="table table-bordred table-striped">
+                   <thead>
+                   <th>First Name</th>
+                    <th>Last Name</th>
+                     <th>Username</th>
+                     <th>Email</th>
+                     <th>Age</th>
+                       <th>Delete</th>
+                   </thead>
+    <tbody>
+    
+   
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.age}}</td>
+        <td>
+          <button style="font-size: 1.5em; color: red; padding-left: 1em;"  (click) = "delete(user.username)" >
+
+              <i class="fa fa-remove"></i>
+
+          </button>
+        </td>
+        </tr>
+    </tbody>     
+</table>
+            
+        </div>
+	</div>
+</div>
+
+
+<app-footer></app-footer>

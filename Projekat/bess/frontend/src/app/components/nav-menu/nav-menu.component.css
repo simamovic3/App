@@ -1,0 +1,24 @@
+.bg-dark {
+    background-color: #e29e3f !important;
+}
+
+@media (min-width: 1200px){
+    
+    .container {
+    max-width: 80%;
+
+}
+}
+
+.nav-item{
+    padding: 1em;
+}
+
+.nav-item a{
+    color: white;
+    font-weight: bold;
+}
+
+a{
+    color: white;
+}

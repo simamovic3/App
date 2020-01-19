@@ -1,0 +1,74 @@
+<app-nav-menu></app-nav-menu>
+<div class="container">
+<div class="row">
+
+<div class="col-md-10">
+      
+    <h2>Categories</h2>
+
+        <p>Lorem ipsum dolor sit amet, patrioque interesset cu duo, no vim expetenda intellegebat. 
+          Mutat iisque an sit. Errem omnium omittam mea ne. Dicam fabulas percipit in eam, aperiri 
+          discere mandamus ut qui. Maiestatis vituperata ne sea, ne vero malorum aliquam mei.         
+         Lorem ipsum dolor sit amet, patrioque interesset cu duo, no vim expetenda intellegebat. 
+         Mutat iisque an sit. Errem omnium omittam mea ne. Dicam fabulas percipit in eam, aperiri 
+         discere mandamus ut qui. Maiestatis vituperata ne sea, ne vero malorum aliquam mei. 
+         Lorem ipsum dolor sit amet, patrioque interesset cu duo, no vim expetenda intellegebat. 
+         Mutat iisque an sit. Errem omnium omittam mea ne. 
+          Dicam fabulas percipit in eam, aperiri discere mandamus ut qui. Maiestatis vituperata ne sea,
+           ne vero malorum aliquam mei </p>
+
+         <br>
+         <hr>
+         <br>
+
+         </div>
+
+         <div class="add col-md-2">
+
+            <div class="form-group" [formGroup]="showCategories">
+
+              <label>Show categories: </label>
+                <select id="inputState" class="form-control" name="category" formControlName="category" #c (change)="getCat(c.value)">
+                    <option value="all"> 
+                        ALL CATEGORIES
+                    </option>
+                
+                  <option *ngFor="let category of categories" [ngValue]="category.cattitle" value="{{category.cattitle}}"> 
+                      {{category.cattitle}}
+                   </option>
+                
+                </select>
+
+                </div>
+                
+                <a href="/addArticle"> <button class="btn btn-primary">Add article</button></a>
+
+           </div> 
+   
+    </div>
+            <!-- Project One -->
+    <div class="row">
+
+      <div class="col-lg-6 portfolio-item" *ngFor="let article of articlesToShow">
+  
+          <div class="card h-100">
+            <a href="#">
+              <img class="card-img-top" [src]="article.pictureUrl" alt="">
+            </a>
+
+          <div class="card-body">
+              <h3>{{article.title}}</h3>
+              <p>{{article.description}}</p>
+              <a [routerLink] = "['/showArticle', article.articleId]">Read more
+              </a>
+          </div>
+
+        </div>
+
+        <!-- /.row -->
+        </div>
+
+        </div>
+       
+   </div>
+    <app-footer></app-footer>

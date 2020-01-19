@@ -1,0 +1,53 @@
+
+<app-nav-menu></app-nav-menu>
+  <div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+
+        <h3>Add article </h3>
+        <hr>
+
+    <form autocomplete="off" [formGroup]="addArticleForm" class="containerstyle col-md-12">
+
+    
+           <div class="form-group">
+                <input class="form-control input-lg" name="title" formControlName="title" placeholder="TITLE" type="text" />
+          </div>
+           <div class="form-group">
+                <textarea class="form-control input-lg" name="description" formControlName="description" placeholder="DESCRIPTION" type="text" maxlength="1000" rows="10" ></textarea>
+            </div>
+            <div class="form-group">
+                    <select id="inputState" class="form-control" name="category" formControlName="category">
+
+                            <option *ngFor="let category of categories" [ngValue]="category.cattitle"> 
+                          {{category.cattitle}}
+                        </option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+
+                <input type="file" name="file" id="file" (change)="onFileChanged($event)"/> 
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" (click)="onUpload(addArticleForm.value)">Create Article</button>
+            </div>
+
+        </form>
+
+        </div>
+
+        <div class="col-md-5 offset-md-1">
+                <h3> Picture preview </h3>
+                <hr>
+        
+              <img id="slika" class="img-fluid rounded mb-3 mb-md-0"  [src]="url" >
+
+        </div>
+
+        </div>
+
+        </div>
+<app-footer></app-footer>

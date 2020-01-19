@@ -1,0 +1,49 @@
+ <!-- Navigation -->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <h3 class="navbar-brand"> <a href="#"> Interior Design by BESS </a></h3>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/articles">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+
+              <li class="nav-item">
+                    <a class="nav-link" href="/forum">Forum</a>
+                  </li>
+              
+              <li class="nav-item">
+                    <a class="nav-link" href="/myProfile">My Profile</a>
+                 </li>
+
+              <li class="nav-item dropdown">
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto" *ngIf="app.localStorageItem('role') == '2'">
+            <li class="nav-item">
+              <a class="nav-link" href="/adminListUsers">Users</a>
+            </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" *ngIf="!userLoggedIn">
+                    <li class="nav-item"><a href="#"> Sign Up</a></li>
+                    <li class="nav-item"><a [routerLink]='["/login"]'> Login</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right" *ngIf="userLoggedIn">
+                      <li class="nav-item"><a [routerLink]='["/login"]'> Sign out</a></li>
+                    </ul>
+          </div>
+        </div>
+      </nav>
+  

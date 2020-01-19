@@ -1,0 +1,2 @@
+Kopirati izbuildane jarove u ovaj folder pa pokrenuti
+i upisati svoje šifre za msql root u docker compose-u

@@ -1,0 +1,21 @@
+.container{
+  padding-top: 6em;
+}
+
+
+@media (min-width: 1200px){
+    
+  .container {
+  max-width: 80%;
+
+}
+}
+
+.col-md-8{
+  float: right;
+}
+
+
+.app-question-add{
+  margin-bottom: 2em;
+}

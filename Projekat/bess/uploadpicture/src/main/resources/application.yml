@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: uploadpicture
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bess_upload_picture_db
+    username: root
+    password: sql123
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest
+server:
+  port: 8091
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka

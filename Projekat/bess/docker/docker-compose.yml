@@ -1,0 +1,94 @@
+version: '3'
+services:
+  eureka-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile.openjdk
+      args:
+        file: eureka-server
+    ports:
+      - 8090:8090
+
+  rabbitmq:
+    image: rabbitmq
+    
+  gateway:
+    build:
+      context: ./
+      dockerfile: Dockerfile.openjdk
+      args:
+        file: gateway
+    ports:
+      - 8084:8084
+    depends_on:
+      - eureka
+
+  bess_account_db:
+    build:
+        context: .
+        dockerfile: Dockerfile-Mysql
+    image: mysqlimg:latest
+    environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=bess_account_db
+
+  account:
+    build:
+      context: ./
+      dockerfile: Dockerfile.openjdk
+      args:
+        file: account
+    ports:
+      - 8092:8092
+    depends_on:
+      - eureka-server
+      - rabbitmq
+      - bess_account_db
+
+  bess_article_db:
+    build:
+        context: .
+        dockerfile: Dockerfile-Mysql
+    image: mysqlimg:latest
+    environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=bess_article_db
+        
+
+  article:
+    build:
+      context: ./
+      dockerfile: Dockerfile.openjdk
+      args:
+        file: article
+    ports:
+      - 8093:8093
+    depends_on:
+      - eureka-server
+      - rabbitmq
+      - bess_article_db
+
+  bess_forum_db:
+    build:
+        context: .
+        dockerfile: Dockerfile-Mysql
+    image: mysqlimg:latest
+    environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=bess_forum_db
+
+  forum:
+    build:
+      context: ./
+      dockerfile: Dockerfile.openjdk
+      args:
+        file: forum
+    ports:
+      - 8094:8094
+    depends_on:
+      - eureka-server
+      - rabbitmq
+      - bess_article_db
+
+
+
